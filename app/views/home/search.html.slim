@@ -1,0 +1,5 @@
+= form_tag
+  .search_elem  
+    = select_tag(:name, options_for_select(@code_langs))
+  .search_elem
+    = text_field_tag :tags, '' , placeholder: 'INPUT TAGS', tabIndex: 2
