@@ -1,0 +1,19 @@
+.content_home
+  a[href="/search"]
+    h2.search_home
+      | # SEARCH
+  h1.logo_home
+    span.logo_bracket
+      | {
+    | CODE =>
+    br 
+    | &nbsp;&nbsp;&nbsp;&nbsp;NOT
+    span.logo-E-letter
+      | E
+    span.logo_bracket
+      | }
+  nav.nav_home
+    - ['sign_up','sign_in','about'].each do |elem|
+        = link_to elem, "/#{elem}", class: "nav_home_elem"
+      
+  
