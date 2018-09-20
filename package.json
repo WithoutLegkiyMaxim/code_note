@@ -1,0 +1,15 @@
+{
+  "name": "note",
+  "private": true,
+  "dependencies": {
+    "@rails/webpacker": "3.5",
+    "slim-lang-loader": "0.0.7",
+    "vue": "^2.5.17",
+    "vue-loader": "14.2.2",
+    "vue-template-compiler": "^2.5.17"
+  },
+  "devDependencies": {
+    "vue-template-compiler-loader": "^1.0.4",
+    "webpack-dev-server": "2.11.2"
+  }
+}
