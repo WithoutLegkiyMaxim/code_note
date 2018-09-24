@@ -12,7 +12,7 @@ gem 'webpacker'
 gem 'foreman'
 
 gem "slim-rails"
-
+gem 'gon'
 gem 'jbuilder', '~> 2.5'
 
 # gem 'bcrypt', '~> 3.1.7'
