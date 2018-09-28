@@ -13,7 +13,7 @@ html
     = Gon::Base.render_data
   body
     header#header
-      - if (params[:controller] == 'home') and (params[:action] == 'search')
+      - if (params[:controller] == 'home') and (params[:action] != 'index')
         = render '/layouts/header'
     main
       = yield

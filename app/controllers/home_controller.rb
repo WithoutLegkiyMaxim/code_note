@@ -15,11 +15,8 @@ class HomeController < ApplicationController
     gon.langs = @langs.to_json
   end
 
-
-  def less_home
+  def about
   end
-
-  def less_about
-  end
+  
 
 end

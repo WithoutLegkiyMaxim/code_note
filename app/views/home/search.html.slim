@@ -1,1 +1,9 @@
-= form_tag
+.search
+  = form_tag('/search', method: 'get') do
+    h1
+      | SEARCH
+    = label_tag :tag
+    = text_field_tag :tag,'', placeholder: 'Input tag, and click add', class: 'search_tag', type: 'word'
+    = label_tag :title
+    = text_field_tag :title, '', placeholder: 'Input keywords for title', type: 'text'
+    = submit_tag 'Search', class: 'search_btn'

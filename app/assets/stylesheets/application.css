@@ -17,6 +17,10 @@
   src: url('https://fonts.googleapis.com/css?family=Luckiest+Guy');
   font-family: 'Luckiest Guy';
  }
+ @font-face {
+   src: url('https://fonts.googleapis.com/css?family=Bai+Jamjuree');
+    font-family: 'Bai'
+  }
  
  body {
    font-family: 'Luckiest Guy';
