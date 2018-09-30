@@ -16,5 +16,7 @@ html
       - if (params[:controller] == 'home') and (params[:action] != 'index')
         = render '/layouts/header'
     main
+      - if (params[:action] == 'search')
+        = render '/layouts/search'
       = yield
     footer#footer
