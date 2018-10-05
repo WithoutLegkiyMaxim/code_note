@@ -3,6 +3,7 @@ class Sticker < ApplicationRecord
   has_many :sticker_tags
   
   belongs_to :user
+  belongs_to :code_lang
   
   has_many :ratings
   has_many :who_mark, through: :ratings, source: :users

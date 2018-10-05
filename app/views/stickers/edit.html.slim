@@ -1,0 +1,9 @@
+.container
+  .box
+    h1.title.has-text-info Editing sticker
+    == render 'form'
+
+  => link_to 'Show', @sticker, class: "button is-success"
+  |&nbsp;
+  => link_to 'Back', stickers_path, class: "button is-info"
+

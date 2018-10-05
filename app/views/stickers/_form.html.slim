@@ -1,0 +1,34 @@
+= form_with(model: @sticker, method: "POST", action: "/stickers", ) do |f|
+  - if @sticker.errors.any?
+    #error_explanation
+      h2 
+        = "#{pluralize(@sticker.errors.count, "error")} prohibited this sticker from being saved:"
+      ul
+        = @sticker.errors.full_messages.each do |message|
+          li 
+            = message
+  - else
+  br
+    .fields
+      .filed
+        = f.label :id, class: "label"
+        = f.text_field :id, class: "input"
+      .field
+        = f.label :title, class: "label"
+        = f.text_field :title, class: "input"
+      .field
+        = f.label :description, class: "label"
+        = f.text_area :description, class: "textarea"
+      .field
+        = f.label :code, class: "label"
+        = f.text_area :code, class: "textarea"
+      .field
+        = f.label :user_id, class: "label"
+        = f.number_field :user_id, class: "input number"
+      .filed
+        = f.label :code_lang, class: "label"
+        = f.number_field :code_lang_id, class: "input number"
+    
+  
+  .actions.field
+    = f.submit class: "button is-outlined is-success"

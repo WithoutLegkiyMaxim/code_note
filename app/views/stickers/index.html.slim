@@ -1,0 +1,27 @@
+.container
+  .container.stickers
+    h1 Listing stickers
+
+    = link_to 'New Sticker', new_sticker_path
+    table.table.table.is-bordered.is-striped.is-narrow.is-hoverable.is-fullwidth
+      thead
+        tr
+          th
+          th
+          th
+
+      tbody
+        - @stickers.each do |sticker|
+          tr.box.tags
+            td.title.is-5.tag
+              = sticker.title
+            td.tag.is-info
+              = link_to 'Show', sticker
+            td.tag.is-warning
+              = link_to 'Edit', edit_sticker_path(sticker)
+            td.tag.is-danger.gap
+              = link_to 'Destroy', sticker, data: { confirm: 'Are you sure?' }, method: :delete
+
+  .container
+    .container.box
+      = will_paginate @stickers,class: "pagination", id: "navig_pages"

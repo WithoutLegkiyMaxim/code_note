@@ -11,10 +11,14 @@ gem 'uglifier', '>= 1.3.0'
 gem 'webpacker'
 gem 'foreman'
 
+gem "bulma-rails", "~> 0.7.1"
+
 gem "slim-rails"
 gem 'gon'
 gem 'jbuilder', '~> 2.5'
 
+#for pagination
+gem 'will_paginate', '~> 3.1.0'
 # gem 'bcrypt', '~> 3.1.7'
 
 # gem 'mini_magick', '~> 4.8'

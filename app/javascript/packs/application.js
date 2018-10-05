@@ -5,6 +5,16 @@ import App from '../just.vue'
 
 
 document.addEventListener('DOMContentLoaded', () => {
+  let pagination = document.getElementById("navig_pages")
+  let list = pagination.children
+  for(let i in list) {
+      if (list[i].className == 'current') {
+        list[i].classList.add("is-current")
+      }
+      list[i].classList.add("pagination-link")
+  }
+  document.getElementsByClassName("previous_page")[0].classList.add("pagination-previous]")
+  document.getElementsByClassName("next_page")[0].classList.add("pagination-next]")
   // тут происходит привязка запуска компонента
   // после загрузки страницы
 
