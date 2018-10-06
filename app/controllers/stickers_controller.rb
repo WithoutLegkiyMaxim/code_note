@@ -1,4 +1,5 @@
 class StickersController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_sticker, only: [:show, :edit, :update, :destroy]
 
   # GET /stickers
@@ -28,7 +29,7 @@ class StickersController < ApplicationController
     @sticker = Sticker.new(sticker_params)
     respond_to do |format|
       if @sticker.save
-        format.html {redirect_to @sticker, notice: "Sticker successfull created"}
+        format.html { redirect_to @sticker, notice: "Successfull Creaate Sticker"}
         format.json { render :show, status: :created, location: @sticker }
       else
         format.html { render :new }
@@ -42,7 +43,7 @@ class StickersController < ApplicationController
   def update
     respond_to do |format|
       if @sticker.update(sticker_params)
-        format.html { redirect_to @sticker, notice: 'Sticker was successfully updated.' }
+        format.html { redirect_to @sticker, notice: "Successfull Update Sticker"}
         format.json { render :show, status: :ok, location: @sticker }
       else
         format.html { render :edit }
@@ -73,5 +74,6 @@ class StickersController < ApplicationController
       params.fetch(:sticker, {}).each do |key, val|
         p newM.update({key.to_sym => val})
       end
+      newM
     end
 end

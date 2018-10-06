@@ -36,6 +36,7 @@ group :development, :test do
 end
 
 group :development do
+  gem 'awesome_rails_console'
   # Access an interactive console on exception pages or by calling 'console' anywhere in the code.
   gem 'guard-livereload', '~> 2.5', require: false
   gem 'web-console', '>= 3.3.0'
@@ -45,3 +46,12 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+# Please clean up duplicated gems if any.
+# Feel free to remove gems that you don't want to use or if they conflict with other gem dependencies. (you might need to update .pryrc also)
+group :development, :test do
+  gem 'hirb'
+  gem 'hirb-unicode'
+  gem 'pry-byebug'
+  gem 'pry-stack_explorer'
+end

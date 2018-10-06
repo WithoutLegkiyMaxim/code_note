@@ -1,5 +1,32 @@
-p#notice 
-  = notice
-= link_to 'Edit', edit_sticker_path(@sticker), class: "button is-info"
-|&nbsp;
-= link_to 'Back', stickers_path, class: "button is-success"
+.container
+  - unless notice.blank?
+    .box
+      p#notice.tag.is-success
+        = notice
+  .box
+    span.title.is-1
+      | #{@sticker.title}
+    .box
+      h3.subtitle.is-3
+        | Description
+      p.message
+      | #{@sticker.description}
+    .box
+      span.subtitle.is-3
+        | Code 
+        span.tag.is-success
+          | #{@sticker.code_lang.name}
+      p.message
+      | #{@sticker.code}
+    .box
+      h3.subtitle.is-3
+        | Author
+      p.message
+      | #{@sticker.user.first_name + " " + @sticker.user.last_name}
+    p.tag.box.subtitle.is-6
+      | created at #{@sticker.created_at}
+
+  .box
+    = link_to 'Edit', edit_sticker_path(@sticker), class: "button is-info"
+    |&nbsp;
+    = link_to 'Back', stickers_path, class: "button is-success"

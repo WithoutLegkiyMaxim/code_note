@@ -1,15 +1,9 @@
 .container
   .container.stickers
-    h1 Listing stickers
+    h1.title.is-1.box All stickers
 
-    = link_to 'New Sticker', new_sticker_path
+    = link_to 'New Sticker', new_sticker_path, class:"box button is-success"
     table.table.table.is-bordered.is-striped.is-narrow.is-hoverable.is-fullwidth
-      thead
-        tr
-          th
-          th
-          th
-
       tbody
         - @stickers.each do |sticker|
           tr.box.tags
