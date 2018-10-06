@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  devise_for :users
   resources :stickers
   # root to: 'home#less_home'
   # get '/about', to: 'home#less_about'
