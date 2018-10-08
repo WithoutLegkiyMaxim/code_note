@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_09_18_101704) do
+ActiveRecord::Schema.define(version: 2018_10_08_015148) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -25,7 +25,7 @@ ActiveRecord::Schema.define(version: 2018_09_18_101704) do
   create_table "ratings", force: :cascade do |t|
     t.bigint "sticker_id"
     t.bigint "user_id"
-    t.boolean "mark", default: false
+    t.integer "mark"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["sticker_id"], name: "index_ratings_on_sticker_id"
@@ -61,9 +61,14 @@ ActiveRecord::Schema.define(version: 2018_09_18_101704) do
     t.string "first_name"
     t.string "last_name"
     t.string "email"
-    t.string "password"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "encrypted_password", default: "", null: false
+    t.string "reset_password_token"
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.string "provider"
+    t.string "url"
     t.index ["email"], name: "index_users_on_email"
   end
 

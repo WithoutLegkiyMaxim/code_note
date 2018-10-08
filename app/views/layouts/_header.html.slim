@@ -1,5 +1,18 @@
+
 = link_to root_path, class: 'logo_link', id: 'gamburger'
   .logo
 nav.nav_home
-  - ['sign_up','sign_in','about'].each do |elem|
-      = link_to elem, "/#{elem}", class: "nav_home_elem"
+  - ['search','sign_up','sign_in','about'].each do |elem|
+      - if params[:action] != 'index'
+        - if params[:action] == elem
+          = link_to elem, "/#{elem}", class: "nav_home_elem",style:"pointer-events: none;"
+        - else
+          = link_to elem, "/#{elem}", class: "nav_home_elem"
+      - elsif elem == 'search'
+        - next
+      - else
+        - if params[:action] == elem
+          = link_to elem, "/#{elem}", class: "nav_home_elem",style:"pointer-events: none;"
+        - else
+          = link_to elem, "/#{elem}", class: "nav_home_elem"
+            

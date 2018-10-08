@@ -1,5 +1,16 @@
-= form_tag
-  .search_elem  
-    = select_tag(:name, options_for_select(@code_langs))
-  .search_elem
-    = text_field_tag :tags, '' , placeholder: 'INPUT TAGS', tabIndex: 2
+.search
+  - page = 1
+  - @stickers.each_with_index do | s, inx |
+    - if inx % 3 == 0
+      - page += 1   
+    .sticker[class="page#{page}"]
+      h2[class="#{s.rating>0 ? 'plus' : (s.rating < 0 ? 'minus' : 'zero')}"]
+        = s.rating
+      h1.title
+        = s.title
+      p
+        = s.description
+.pagintaion
+  - (1..page).each do |p|
+    a href="#"
+      = p

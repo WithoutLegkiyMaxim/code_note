@@ -13,7 +13,8 @@ li
 a:hover
   background: black
   color: white
-
+p
+  font-family: 'Bai'
 main
   height: 100vh
   display: flex
@@ -66,6 +67,62 @@ header
     order: 1
   .logo_link:hover
     background: white
+
+.about 
+  margin: 10% 0
+  display: flex
+  flex-direction: column
+  justify-content: flex-start
+  align-items: center
+  .about_descr
+    font-size: 1.7em
+    width: 70%
+    text-align: center
+    font-weight: 100
+  .about_header
+    font-size: 4em
+
+.search_form // swap class, delimit form and posts
+  form
+    display: grid
+    grid-template-columns: 1fr 2fr
+    grid-template-rows: repeat(6, 0.5fr)
+    margin: 15px
+    grid-gap: 20px
+    h1
+      grid-area: 1 / 1 / span 1 / span 2
+      text-align: center
+    .add_tag
+      a
+        user-select: none
+        font-family: 'Luckiest Guy'
+        font-size: 3em
+    label
+      padding: 15px
+    .search_btn
+      grid-area: 4 / 1 / span 1 / span 2
+
+.search
+  margin: 0 auto
+  display: flex
+  flex-direction: column
+  // flex-wrap: wrap
+  align-items: center
+.pagination
+  display: flex
+  align-self: flex-end
+.sticker
+  border: 2px solid rgba(35, 33, 34, 0.2)
+  .title
+    font-size: 2em
+    font-weight: 200
+    
+  .plus
+    color: #3A7A6E
+  .minus
+    color: #FFCCCC
+  .zero
+    color: #EEEEEE
 @media screen and (max-width: 769px) and (orientation: portrait)
   .content_home
     justify-content: flex-start
@@ -112,3 +169,7 @@ header
       font-size: 4vh
 
 
+.stickers
+  a:hover
+    background: none
+    color: none

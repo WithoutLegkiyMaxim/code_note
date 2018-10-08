@@ -1,4 +1,3 @@
-
 doctype html
 html
   head
@@ -9,12 +8,15 @@ html
     = csp_meta_tag
     = stylesheet_link_tag    'application', media: 'all'
     = javascript_include_tag 'application'
-    / = javascript_pack_tag 'application'
+    = javascript_pack_tag 'application'
     link[href="https://fonts.googleapis.com/css?family=Luckiest+Guy" rel="stylesheet"]
+    = Gon::Base.render_data
   body
     header#header
-      - if (params[:controller] == 'home') and (params[:action] == 'search')
+      - if (params[:controller] == 'home') and (params[:action] != 'index')
         = render '/layouts/header'
     main
+      - if (params[:action] == 'search')
+        = render '/layouts/search'
       = yield
     footer#footer
